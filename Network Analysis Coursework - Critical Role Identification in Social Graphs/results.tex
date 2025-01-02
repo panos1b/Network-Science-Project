@@ -1,0 +1,257 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 2.0 (February 7, 2023)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Author:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+% NOTE: The bibliography needs to be compiled using the biber engine.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	a4paper, % Paper size, use either a4paper or letterpaper
+	11pt, % Default font size, can also use 11pt or 12pt, although this is not recommended
+	unnumberedsections, % Comment to enable section numbering
+	twoside, % Two side traditional mode where headers and footers change between odd and even pages, comment this option to make them fixed
+]{LTJournalArticle}
+
+\addbibresource{sample.bib} 
+
+\runninghead{Coursework: Analysis of a Network} % A shortened article title to appear in the running head, leave this command empty for no running head
+
+\footertext{\textit{DMST | Network Analysis} (2024)} % Text to appear in the footer, leave this command empty for no footer text
+
+\setcounter{page}{1} % The page number of the first page, set this to a higher number if the article is to be part of an issue or larger work
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{Network Analysis Coursework \\ Critical Role Identification in Social Graphs \\ \large Yanis Varoufakis BlueSky} % Article title, use manual lines breaks (\\) to beautify the layout
+
+% Authors are listed in a comma-separated list with superscript numbers indicating affiliations
+% \thanks{} is used for any text that should be placed in a footnote on the first page, such as the corresponding author's email, journal acceptance dates, a copyright/license notice, keywords, etc
+\author{%
+	Panagiotis Alexandros Daskalopoulos \textsuperscript{1} 
+}
+
+% Affiliations are output in the \date{} command
+\date{\footnotesize\textsuperscript{\textbf{1}}Department of Management Science and Technology, Athens University of Economics and Business}
+
+% Full-width abstract
+\renewcommand{\maketitlehookd}{%
+	\begin{abstract}
+		\noindent This coursework analyzes the BlueSky network of Yanis Varoufakis, a key political figure of MeRA25/DiEM25, to explore engagement patterns and influential users. Using Gephi, the network was visualized and analyzed for structural properties, including node and edge counts, network diameter, average path length, and density. 
+	\end{abstract}
+}
+
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+
+\maketitle % Output the title section
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+In this coursework I will be analyzing the BlueSky network of Yanis Varoufakis.\\More specifically  key metrics such as centrality (degree, betweenness, closeness, eigenvector) identified influential accounts, while clustering coefficients, triadic closures, and modularity revealed sub-communities and homophily patterns. PageRank was employed to rank users by importance. \\ We should highlight Varoufakis' role in fostering political discourse online and the structural dynamics of his digital community.
+
+
+%------------------------------------------------
+\section{Why choose Varoufakis?}
+
+\subsection{Network Interest}
+
+placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder
+
+\subsection{Personal Interest}
+
+Yanis Varoufakis is a published economist and former Minister of Finance appointed by former Prime Minister Alexis Tsipras during the hight of the Greek (and European) debt crisis. His outlook on Economics could be characterized as somewhat controversial \autocite{fink2015f}, something he even seems to agree on  \autocite{varoufakis2002critics}. Other than that he is the only Greek politician I could find with a BlueSky account and given my interest in Greek politics I decided I would pick something in that realm. \\ Let us also not forget his extensive work on Economics and Social Policy \autocite{varoufakis2012modern}  \autocite{varoufakis2002foundations}  \autocite{varoufakis2017talking} which makes me believe that his account is worth analyzing. \\ Please keep in mind I personally neither necessarily agree neither endorse his figure.
+
+\section{Graphical representation of the network)}
+
+\section{Basic topological properties}
+\subsection{Numbers of nodes and edges}
+\subsection{Network diameter} 
+\subsection{Average path length}
+
+\section{Component measures}
+, such as number of connected components, existence of a giant component and component size distribution.
+
+\section{Degree measures}
+, such as maximum and average node degrees, as well as degree distribution.
+
+\section{Centrality measures}
+(degree, betweenness, closeness, eigenvector)
+
+\section{Clustering effects in the network}
+: average clustering coefficient, number of triangles, clustering coefficient distribution, existence of the triadic closure phenomenon in the friendship neighborhood.
+
+\section{Bridges}
+and local bridges
+
+\section{Gender and homophily}
+placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder
+
+\section{Graph density}
+placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder
+
+\section{Community structure}
+ (modularity)
+
+\section{PageRank}
+placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder
+
+\section{Methodologies}
+
+\subsection{Sample Sites \& Processing}
+
+This line shows how to use a footnote to further explain or cite text\footnote{Example footnote text.}.
+
+This is a bullet point list:
+
+\begin{itemize}
+	\item Arcu eros accumsan lorem, at posuere mi diam sit amet tortor
+	\item Fusce fermentum, mi sit amet euismod rutrum
+	\item Sem lorem molestie diam, iaculis aliquet sapien tortor non nisi
+	\item Pellentesque bibendum pretium aliquet
+\end{itemize}
+
+Mauris interdum porttitor fringilla. Proin tincidunt sodales leo at ornare. Donec tempus magna non mauris gravida luctus. Cras vitae arcu vitae mauris eleifend scelerisque. Nam sem sapien, vulputate nec felis eu, blandit convallis risus. Pellentesque sollicitudin venenatis tincidunt. In et ipsum libero. Nullam tempor ligula a massa convallis pellentesque.
+
+This is a numbered list:
+
+\begin{enumerate}
+	\item Donec dolor arcu, rutrum id molestie in, viverra sed diam
+	\item Curabitur feugiat
+	\item Turpis sed auctor facilisis
+\end{enumerate}
+
+\subsection{Species Identification}
+
+
+\subsection{Data Analysis}
+
+
+%------------------------------------------------
+
+\section{Results}
+
+
+Aenean feugiat pellentesque venenatis. Sed faucibus tristique tortor vel ultrices. Donec consequat tellus sapien. Nam bibendum urna mauris, eget sagittis justo gravida vel. Mauris nisi lacus, malesuada sit amet neque ut, venenatis tempor orci. Curabitur feugiat sagittis molestie. Duis euismod arcu vitae quam scelerisque facilisis. Praesent volutpat eleifend tortor, in malesuada dui egestas id. Donec finibus ac risus sed pellentesque. Donec malesuada non magna nec feugiat. Mauris eget nibh nec orci congue porttitor vitae eu erat. Sed commodo ipsum ipsum, in elementum neque gravida euismod. Cras mi lacus, pulvinar ut sapien ut, rutrum sagittis dui. Donec non est a metus varius finibus. Pellentesque rutrum pellentesque ligula, vitae accumsan nulla hendrerit ut.
+
+\begin{figure} % Single column figure
+	\includegraphics[width=\linewidth]{Tolmukapea.jpg}
+	\caption{Anther of thale cress (Arabidopsis thaliana), fluorescence micrograph. Source: Heiti Paves, \href{https://commons.wikimedia.org/wiki/File:Tolmukapea.jpg}{https://commons.wiki-\\media.org/wiki/File:Tolmukapea.jpg}.}
+	\label{fig:tcanther}
+\end{figure}
+
+Referencing a figure using its label: Figure \ref{fig:tcanther}.
+
+Aenean 
+
+
+
+
+\subsection{International Support}
+
+\noindent àáâäãåèéêëìíîïòóôöõøùúûüÿýñçčšž
+
+\noindent ÀÁÂÄÃÅÈÉÊËÌÍÎÏÒÓÔÖÕØÙÚÛÜŸÝÑ
+
+\noindent ßÇŒÆČŠŽ
+
+\subsection{Links}
+
+This is a clickable URL link: \href{https://www.latextemplates.com}{LaTeX Templates}. This is a clickable email link: \href{mailto:vel@latextemplates.com}{vel@latextemplates.com}. This is a clickable monospaced URL link: \url{https://www.LaTeXTemplates.com}.
+
+%------------------------------------------------
+
+\section{Discussion}
+
+This statement requires citation \autocite{Smith:2023qr}. This statement requires multiple citations \autocite{Smith:2023qr, Smith:2024jd}. This statement contains an in-text citation, for directly referring to a citation like so: \textcite{Smith:2024jd}.
+
+\subsection{Subsection One}
+
+
+\subsection{Subsection Two}
+
+
+
+\subsubsection{Subsubsection Example}
+
+\begin{equation}
+	\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
+	\label{eq:example}
+\end{equation}
+
+\begin{figure*} % Two column figure (notice the starred environment)
+	\includegraphics[width=\linewidth]{Fibroblastid.jpg}
+	\caption{Bovine pulmonary artery endothelial cells in culture. Blue: nuclei; red: mitochondria; green: microfilaments. Computer generated image from a 3D model based on a confocal laser scanning microscopy using fluorescent marker dyes. Source: Heiti Paves, \href{https://commons.wikimedia.org/wiki/File:Fibroblastid.jpg}{https://commons.wikimedia.org/wiki/File:Fibroblastid.jpg}.}
+	\label{fig:bpartery}
+\end{figure*}
+
+
+Automatically referencing an equation number using its label: Equation \ref{eq:example}.
+
+
+
+\begin{table} % Single column table
+	\caption{Example single column table.}
+	\centering
+	\begin{tabular}{l l r}
+		\toprule
+		\multicolumn{2}{c}{Location} \\
+		\cmidrule(r){1-2}
+		East Distance & West Distance & Count \\
+		\midrule
+		100km & 200km & 422 \\
+		350km & 1000km & 1833 \\
+		600km & 1200km & 890 \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:distcounts}
+\end{table}
+
+Referencing a table using its label: Table \ref{tab:distcounts}.
+
+\begin{table*} % Full width table (notice the starred environment)
+	\caption{Example two column table with fixed-width columns.}
+	\centering % Horizontally center the table
+	\begin{tabular}{L{0.2\linewidth} L{0.2\linewidth} R{0.15\linewidth}} % Manually specify column alignments with L{}, R{} or C{} and widths as a fixed amount, usually as a proportion of \linewidth
+		\toprule
+		\multicolumn{2}{c}{Location} \\
+		\cmidrule(r){1-2}
+		East Distance & West Distance & Count \\
+		\midrule
+		100km & 200km & 422 \\
+		350km & 1000km & 1833 \\
+		600km & 1200km & 890 \\
+		\bottomrule
+	\end{tabular}
+\end{table*}
+%----------------------------------------------------------------------------------------
+%	 REFERENCES
+%----------------------------------------------------------------------------------------
+
+\printbibliography % Output the bibliography
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
