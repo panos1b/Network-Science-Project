@@ -311,9 +311,7 @@ TSWLatexianTemp*
 
 # Ignore Gephi export files (optional, unless you want to track exports)
 *.csv
-*.pdf
 *.svg
-*.png
 *.gexf
 *.graphml
 
