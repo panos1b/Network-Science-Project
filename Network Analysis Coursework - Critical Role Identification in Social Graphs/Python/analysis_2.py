@@ -3,15 +3,8 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# --------------------------
-# Step 1. Read CSV Files
-# --------------------------
 edges_df = pd.read_csv('Edges.csv')
 nodes_df = pd.read_csv('Nodes.csv')
-
-# --------------------------
-# Step 2. Build the Directed Graph
-# --------------------------
 G = nx.DiGraph()
 node_labels = {}  # Store labels for later use
 
@@ -30,9 +23,6 @@ for _, row in edges_df.iterrows():
     target = row['Target']
     G.add_edge(source, target)
 
-# --------------------------
-# Step 3. Compute Graph Connectivity Components
-# --------------------------
 wcc = list(nx.weakly_connected_components(G))
 num_wcc = len(wcc)
 
@@ -41,9 +31,6 @@ num_scc = len(scc)
 scc_more_than_one = [comp for comp in scc if len(comp) > 1]
 num_scc_more_than_one = len(scc_more_than_one)
 
-# --------------------------
-# Step 4. Compute Centrality Measures
-# --------------------------
 try:
     katz_centrality = nx.katz_centrality_numpy(G)
 except Exception as e:
@@ -52,9 +39,6 @@ except Exception as e:
 
 pagerank = nx.pagerank(G)
 
-# --------------------------
-# Step 5. Compute Network Homophily and Gender (Only for Nodes with Labels)
-# --------------------------
 keywords = [
     "pronouns", "just stop oil", "donate", "mental health", "communist", "nature", "vegan",
     "lefty", "queer", "free palestine", "lesbian", "trans", "bi", "union", "climate change",
@@ -94,9 +78,6 @@ print(f"Actual amount of cross-gender edges: {len(labeled_edges) - same_category
 print(f"Expected amount of cross-gender edges: "
       f"{2*(left_count/total_labeled_nodes)*(non_left_count/total_labeled_nodes)*len(labeled_edges):.0f}")
 
-# --------------------------
-# Step 6. Plot Graph Connectivity Metrics
-# --------------------------
 fig, ax = plt.subplots(figsize=(12, 6))
 metrics = ['Weakly Connected Components', 'Strongly Connected Components', 'SCC (size > 1)']
 values = [num_wcc, num_scc, num_scc_more_than_one]
@@ -110,9 +91,6 @@ for i, v in enumerate(values):
 
 plt.show()
 
-# --------------------------
-# Step 7. Plot Top 20 Nodes by Centrality (Sideways Bar Chart)
-# --------------------------
 node_data = pd.DataFrame({
     'Label': [node_labels.get(node, str(node)) for node in G.nodes() if node in node_labels],
     'Katz Centrality': [katz_centrality.get(node, 0) for node in G.nodes() if node in node_labels],
@@ -134,9 +112,6 @@ ax.legend()
 plt.gca().invert_yaxis()  # Invert to show highest rank at top
 plt.show()
 
-# --------------------------
-# Step 8. Plot Left vs Non-Left-Leaning Nodes (Pie Chart)
-# --------------------------
 fig, ax = plt.subplots(figsize=(8, 6))
 ax.pie([left_count, non_left_count], labels=['Left-Leaning', 'Non-Left-Leaning'], autopct='%1.1f%%',
        colors=['lightblue', 'pink'], startangle=90)
