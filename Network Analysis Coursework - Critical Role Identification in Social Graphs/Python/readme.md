@@ -1,0 +1,4 @@
+- `analysis_1`: Calculating clustering coefficients, triadic closure, triangles, bridges, local bridges, and modularity
+- `analysis_2`: Calculates connected components, Katz centrality, PageRank, Political Gender and homophily
+- `analysis_3`: Bridging centrality, Community detection using Girvan-Newman algorithm
+- `analysis_4`: Community detection using Leiden algorithm
