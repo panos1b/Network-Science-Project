@@ -76,7 +76,7 @@ Social media has played a fundamental role in shaping digital communication and 
 
 Bluesky builds upon the short text-based format that was originally popularized by Twitter but introduces a decentralized architecture that aligns with broader trends in digital innovation. This decentralized approach allows users greater autonomy over their digital presence. Furthermore, Bluesky embraces an open-source framework, granting developers transparency and the ability to contribute to or modify the platform’s underlying code. Perhaps most significantly, Bluesky enables individuals to host their social media profiles on their own infrastructure, reducing dependence on centralized corporations and fostering a greater sense of digital sovereignty. These characteristics mark Bluesky as a significant departure from traditional social media platforms, which often rely on centralized control and opaque algorithmic moderation.
 
-Bluesky rose to even larger prominence after the US election and the victory of President Trump. A pivotal moment in Bluesky’s expansion came because of actions taken by Elon Musk, who, in addition to being, a Trump appointed, Special Government Employee at the Department of Government Efficiency, is also the majority owner of X/Twitter, Bluesky’s primary competitor. Musk’s reforms to Twitter’s content moderation policies, particularly those concerning misinformation and the incident in which Musk was filmed performing a "Roman Salute," a gesture historically associated with fascist symbolism \autocite{winkler2009roman} led to widespread debate and prompted many users to seek alternative platforms such as BlueSky. Both these actions have been heavily controversial \autocite{politicoElonMusks} and have promted legal action from critics \autocite{jaffe2025trump}.
+Bluesky rose to even larger prominence after the US election and the victory of President Trump. A pivotal moment in Bluesky’s expansion came because of actions taken by Elon Musk, who, in addition to being, a Trump appointed, Special Government Employee at the Department of Government Efficiency, is also the majority owner of X/Twitter, Bluesky’s primary competitor. Musk’s reforms to Twitter’s content moderation policies, particularly those concerning misinformation and the incident in which Musk was filmed performing a "Roman Salute," a gesture historically associated with fascist symbolism \autocite{winkler2009roman} led to widespread debate and prompted many users to seek alternative platforms such as BlueSky. Both these actions have been heavily controversial \autocite{politicoElonMusks} and have prompted legal action from critics \autocite{jaffe2025trump}.
 
 \subsection{Significance of Network Analysis in Understanding Social Platforms}
 As extensively discussed in our lectures, Network Analysis plays a crucial role in examining Social Networks and therefore is a strong tool for also analyzing social media platforms. It is particularly helpful in understanding the ways individuals connect and interact. By mapping the relationships between users, analyzing patterns of communication, and identifying influential nodes within these networks, Network Analysis provides valuable insights into the structure and dynamics of digital social ecosystems. This analysis is very relevant in studying emerging platforms such as Bluesky, where the decentralized architecture and the novel governance model redefine traditional online interactions. 
@@ -90,7 +90,7 @@ The main objective of this coursework is highlighting Varoufakis' role in foster
 As instated above he is quite active online, I was expecting his network to be quite complex and interconnected, as his views (in my opinion) usually push for the creation of echo chambers. Although after pulling his network, and making initial inferences, I was surprised to be proven wrong. His network was very open-ended and lightly interconnected. In the analysis that follows it is obvious that this network is the opposite of what someone would expect. 
 
 \subsection{Personal Interest}
-Yanis Varoufakis is a published economist and former Minister of Finance appointed by former Prime Minister Alexis Tsipras during the hight of the Greek (and European) debt crisis. His outlook on Economics could be characterized as somewhat controversial \autocite{fink2015f}, something he even seems to agree on  \autocite{varoufakis2002critics}. Other than that he is the only Greek politician I could find with a BlueSky account and given my interest in Greek politics I decided I would pick something in that realm. \\ Let us also not forget his extensive work on Economics and Social Policy \autocite{varoufakis2012modern, varoufakis2002foundations, varoufakis2017talking} which makes me believe that his account is worth analyzing. \\ Please keep in mind I personally neither necessarily agree neither endorse his figure or his views.
+Yanis Varoufakis is a published economist and former Minister of Finance appointed by former Prime Minister Alexis Tsipras during the height of the Greek (and European) debt crisis. His outlook on Economics could be characterized as somewhat controversial \autocite{fink2015f}, something he even seems to agree on  \autocite{varoufakis2002critics}. Other than that he is the only Greek politician I could find with a BlueSky account and given my interest in Greek politics I decided I would pick something in that realm. \\ Let us also not forget his extensive work on Economics and Social Policy \autocite{varoufakis2012modern, varoufakis2002foundations, varoufakis2017talking} which makes me believe that his account is worth analyzing. \\ Please keep in mind I personally neither necessarily agree neither endorse his figure or his views.
 
 \section{Limitations}
 It must be made abundantly clear that this analysis comes with some very strong limitations. The preliminary nature of BlueSky’s network, the fact that the Gephi plugin seems to not fetch 100\% of the data you’d expect, combined with the lack of the ability to completely verify the pulled network’s structure creates a cocktail of problems that could be proven fatal for this coursework. Putting that to one side, this does not mean the coursework lacks value; it still has the potential to surface interesting and meaningful patterns within the network. However, it is crucial to recognize that any conclusions drawn from this coursework should be approached with caution rather than them being treated as definitive, they should also be seen as preliminary insights that require further investigation and validation.
@@ -98,24 +98,27 @@ It must be made abundantly clear that this analysis comes with some very strong 
 \subsection{Katz Centrality}
 Eigenvector centrality led to a big disparity between the first and second accounts, I elected to also try Katz centrality as it extends eigenvector centrality by introducing an attenuation factor that accounts for both direct and indirect connections, ensuring that influence diminishes with distance. This modification allows Katz centrality to prevent dominance of highly connected nodes, making it more versatile for analyzing real-world networks. Even though I implemented the code; it required 51GB of RAM to run, I only have 40GB so it was never computed.
 
+\subsection{Girvan-Newman Clustering}
+As Modularity Community Detection was not producing very interesting communities I wanted to use other clustering algorithms. One of those is Girvan-Newman Clustering. Due to similar system limitation as in Katz Centrality the algorithm never ran.
+
 \section{Methodology}
-To analyze Varoufakis network, I mainly used Gephi and the Bluesky Plugin available for it. I pulled the data from Blusky using the plugin and ran most of the analysis using Gephi’s included features. For more complex analysis, that could not be performed within Gephi, I used python with the NetworkX library. The code used is available on GitHub here []. Some of the visualizations created by Gephi were, to put it lightly, appalling; so Matplotlib or Seaborn were used to redo them. \\
-The report you are reading was generated using PdfLaTeX and the Biber engine for bibliography. The template used is the official Journal Article LaTeX Template authored by Vel (vel@latextemplates.com) and licenced under CC BY-NC-SA 4.0 (you can find a copy of the licence \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{here}).
+To analyze Varoufakis network, I mainly used Gephi and the Bluesky Plugin available for it. I pulled the data from Blusky using the plugin and ran most of the analysis using Gephi’s included features. For more complex analysis, that could not be performed within Gephi, I used python with the NetworkX library. The code used is available on GitHub \href{https://github.com/panos1b/Network-Science-Project}{here}. Some of the visualizations created by Gephi were, to put it lightly, appalling; so Matplotlib or Seaborn were used to redo them. \\
+The report you are reading was generated using PdfLaTeX and the Biber engine for bibliography. The template used is the official Journal Article LaTeX Template authored by Vel (vel@latextemplates.com) and licensed under CC BY-NC-SA 4.0 (you can find a copy of the license \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{here}).
 
 
 \section{Graphical representation of the network}
 
-The graphical representation of the network is seen in figure \ref{fig:harmonicc}. (The nodes have been colored in accordance with the Harmonic Closeness Centrality). You would expect that Gianis was in the center of the vastly interconnected part on the right, but he is actually the larger red node on the bottom left. He seems to be connected strongly with the large partition on the right and with a single link with each node in the partition on the left. He is therefore the only link between these two “network parts”. This intrigued me to also investigate what the difference between these two parts is.
+The graphical representation of the network is seen in figure \ref{fig:harmonicc}. The nodes have been colored in accordance with the Harmonic Closeness Centrality. The network layout was created via a mix of Yifan Hu Proportional and Force Atlas 2 (without stronger gravity) to achieve a somewhat identifiable structure. You would expect that Gianis was in the center of the vastly interconnected part on the right, but he is actually the larger red node on the bottom left. He seems to be connected strongly with the large partition on the right and with a single link with each node in the partition on the left. He is therefore the only link between these two “network parts”. This intrigued me to also investigate what the difference between these two parts is.
 
 \begin{figure*} 
 	\includegraphics[width=\linewidth]{Graph (Harmonic Closeness).png}
-	\caption{The Graph colored in respect to the Harmonic Closeness of nodes}
+	\caption{Graph colored according to the Harmonic Closeness of the nodes}
 	\label{fig:harmonicc}
 \end{figure*}
 
 \begin{figure*}
 	\includegraphics[width=\linewidth]{Harmonic Closeness Centrality Distribution.png}
-	\caption{The Harmonic Closeness Centrality Distribution}
+	\caption{Distribution of Harmonic Closeness Centrality}
 	\label{fig:harmonicd}
 \end{figure*}
 
@@ -128,14 +131,12 @@ Component measures help us understand how connected a network is by identifying 
 
 There is one Weakly Connected Component in Giannis’s network, which is expected as all followers and followees must be connected to him or other nodes in the network in order to be pulled by the plugin. This component is not characterized as being giant, I compare it further later to a Erdős–Rényi random graph and this becomes even more evident.
 
-If we also look at the graph directionally then there is a high number of Strongly Connected Components, this is partly because Gianis doesn’t follow many people on Bluesky, therefore most of his followers form a Strong Component of their own. It’s even more evident as there are only 13 Strongly Connected Components which contain more than one node in the network but a stagering 68.212 Strongly Connected Components overall.
-
-As stated earlier, it’s easily distinguishable that there is quite a large node area on the left of Gianis, this area seems to contain all his followers that are not connected to anyone else in the graph. This is in line with the color of the degree of these nodes signifying a degree of one (that being the connection to Gianis). Looking at these nodes there were about 6.000 of them that did not contain a Bio (Description). This caught my attention. After digging a bit further and shifting through many of them I found that they rarely contained any self-authored posts, and they were either constantly reposting other posts or their wall was empty. They also, after coming back to them a couple months after pulling our network, are following a small amount of people which seem to be of common interest. I don’t want to draw any conclusion, so the inference is left as practice to the reader of this coursework.
+If we also look at the graph directionally then there is a high number of Strongly Connected Components, this is partly because Gianis doesn’t follow many people on Bluesky, therefore most of his followers form a Strong Component of their own. It’s even more evident as there are only 13 Strongly Connected Components which contain more than one node but a staggering 68.212 Strongly Connected Components overall.
 
 \section{Degree Measures}
 Degree-based measures provide fundamental insights into the structure of a network by quantifying how well-connected individual nodes are.
 
-In figure \ref{fig:degreec} we can see how the graph is colored in, in accordance to the Degree of the nodes. An overwhelming number of nodes have a degree of one, which might not be that interesting for the analysis, therefore in figure  \ref{fig:degreecminus} has a filter applied to only show nodes with a degree greater than one. Notice the complete abolishment of subsection number two (prev. blue). The average degree is 1.609 which is quite low.
+In figure \ref{fig:degreec} we can see how the graph is colored in, in accordance to the degree of the nodes. An overwhelming number of nodes have a degree of one, which might not be that interesting for the analysis, therefore figure  \ref{fig:degreecminus} has a filter applied to only show nodes with a degree greater than one. Notice the complete abolishment of subsection number two (prev. blue). The average degree is 1.609 which is quite low.
 
 As we have thoroughly discussed in class, random networks don’t model social networks gracefully, but they are helpful for comparison to draw better conclusions. Bluesky seems to be so new as a social media app that most accounts are only following a small number of related people. If we compare it to a Erdős–Rényi random network, as described in \autocite{erdHos1961strength}, with an equivalent 82.733 nodes and using the equation \[\langle k \rangle = \frac{2m}{n}\] we find that for the same average degree of 1,609 the probability of two vertices to be connected is equal to \[ p = 2 \times 10^{-5} \] which is incredibly small. This suggests, at least initially, that Bluesky does not resemble a well-connected social network but instead appears highly fragmented, with most users following only a small number of closely related accounts.
 
@@ -143,31 +144,31 @@ The maximum degree is, as expected, Gianis’s node with a degree of 18.211. In 
 
 \begin{figure*} 
 	\includegraphics[width=\linewidth]{Graph (Degree color).png}
-	\caption{The Graph colored in respect to the Node Degree}
+	\caption{Graph colored according to Node Degree}
 	\label{fig:degreec}
 \end{figure*}
 
 \begin{figure*}
 	\includegraphics[width=\linewidth]{Graph (Degree Without One color).png}
-	\caption{The Graph colored in respect to the Node Degree excluding nodes with a degree of one}
+	\caption{Graph colored according to Node Degree, excluding nodes with a degree of one}
 	\label{fig:degreecminus}
 \end{figure*}
 
 \begin{figure*}
 	\includegraphics[width=\linewidth]{degree-distribution.png}
-	\caption{The Distribution of node degree}
+	\caption{Distribution of Node Degree}
 	\label{fig:degreed}
 \end{figure*}
 
 \begin{figure*} 
 	\includegraphics[width=\linewidth]{Eccentricity Distribution.png}
-	\caption{The Distribution of Eccentricity}
+	\caption{Distribution of Eccentricity}
 	\label{fig:eccentricityd}
 \end{figure*}
 
 \begin{figure*} 
 	\includegraphics[width=\linewidth]{Closeness Centrality Distribution.png}
-	\caption{Closeness Centrality Distribution}
+	\caption{Distribution of Closeness Centrality}
 	\label{fig:closenessd}
 \end{figure*}
 
@@ -181,15 +182,16 @@ For closeness centrality the number one account was @atproto.com, this is the ac
 For betweenness centrality the number one account is @paulftremlett.bsky.social. Dr Paul-Francois Tremlett is a Senior Lecturer in Religious Studies at the Open University in Milton Keynes, England. He is the only account which is both in the top ten for the measures of in-Degree and out-Degree (He has around fourteen hundred followers and is following nineteen hundred accounts). I believe this contributes the most to the high betweenness centrality; but I could not draw a definite conclusion. My other assumption, looking through his biography, was that his high involvement in different areas, such as literature, ethnographic research and teaching, make him an account with followers and following from completely different backgrounds and areas of interest.
 
 Eigenvector centrality assigns scores based on the principle that a node is important if it is connected to other important nodes, calculated as the dominant eigenvector of the adjacency matrix. For eigenvector centrality let’s start with account number four, which was again @paulftremlett.bsky.social with a measure of 0,425 who we talked about earlier. The number two account was Gianis with a measure of 0,572. Number one for eigenvector centrality is @ncecire.bsky.social who has a score of 1 (that’s expected as eigenvector is relative). The big difference between them and the second-place account shows that they seem to have quite a large number of connections to influential nodes in the network. This seems to corelate to the fact that this account has a large number of followers and followees which are all high-stake individuals. They, of course, follow all other the previously mentioned accounts which are collectively highly influential.
+
 \begin{figure*} 
 	\includegraphics[width=\linewidth]{Graph (Eigenvector color).png}
-	\caption{the Graph colored in respect to the Eigenvector Centrality}
+	\caption{Graph colored according to Eigenvector Centrality}
 	\label{fig:eigenvector}
 \end{figure*}
 
 \begin{figure*} 
 	\includegraphics[width=\linewidth]{clustering_distribution.png}
-	\caption{The Distribution of Clustering Coefficients }
+	\caption{Distribution of Clustering Coefficients}
 	\label{fig:clusteringd}
 \end{figure*}
 
@@ -199,59 +201,91 @@ My clustering coefficient distribution is in figure \ref{fig:clusteringd}, it is
 There are 6.204 triangles in the network and triadic closure is very low, the fact that most of the nodes have a degree which is one or two is the first indication that the transitivity (the percentage of closed triads) will also be exceptionally low. Transitivity was calculated as 0000079 or, to put it plainly, one in about thirteen thousand triads are closed. Triadic closure is a phenomenon which is highly anticipated in social networks; therefore, I attribute the fact that transitivity is so low to the relative novelty of BlueSky at the time on analysis.
 
 \section{Bridges}
-Bridges are edges in a graph that, if removed, increase the number of connected components. Local bridges are edges whose removal increases the shortest path length between their endpoints. Earlier in the analysis, it was outlined that nodes degrees are usually either one or two and triadic closure is low. This leads to most edges also being bridges, as removing them would create a disconnected component of a singular node. The number of bridges is 68.343 and the number of local bridges is 107.631. As stated earlier, my assumption is that the relative novelty of BlueSky is making subsets of its network not yet model what we expect from social networks (as in network science; not social media networks).
+Bridges are edges in a graph that, if removed, increase the number of connected components. Local bridges are edges whose removal increases the shortest path length between their endpoints. Earlier in the analysis, it was outlined that node degrees are usually either one or two and triadic closure is low. This leads to most edges also being bridges, as removing them would create a disconnected component of a singular node. The number of bridges is 68.343 and the number of local bridges is 107.631. As stated earlier, my assumption is that the relative novelty of BlueSky is making subsets of its network not yet model what we expect from social networks (as in network science; not social media networks).
+
+As we discussed bridges let's circle back to also explore one more Centrality measures which works in conjunction with bridges
+
+\subsection{Bridging Centrality}
+Bridging Centrality is a refinement of betweenness centrality, emphasizing nodes that not only have high betweenness but also serve as essential structural links between distinct network clusters /autocite{hwang2006bridging}. In our network we find that @reclaimuc.bsky.social is the most influential node in accordance to bridging centrality. They bridge, between others, @ncecire.bsky.social which was our most influential node in regards to eigenvector with @aelsi.bsky.social which introduces a large chunk of new nodes to our network. This new cluster of nodes is visible in figure \ref{bridgencecire}
+
+\begin{figure} 
+	\includegraphics[width=\linewidth]{Bridge.png}
+	\caption{New chunk of nodes introduced by @aelsi.bsky.social (highlighted in yellow)}
+	\label{fig:bridgencecire}
+\end{figure}
 
 \section{Gender and Homophily}
-We were taught that to establish whether a network is homophilous or not we have to measure the cross-gender edges and compare them to what we would expect if they were formed randomly. The problem is what do we define as “Gender” in our network. The first option would be to use actual assigned sex, so male and female, to categorize the nodes and then calculate are cross-gendered edges. Although this would be interesting, I don’t think it would add value to our analysis and there is also no easy way to find this.\\
+Gender homophily is the tendency for people to form social connections with others of the same gender. It is a common phenomenon that can be observed in various settings \autocite{kwiek2021gender, wang2023gender, ghiasi2018gender}. While it can foster a sense of belonging and support, it can also contribute to segregation and inequality.
+
+We were taught that to establish whether a network is homophilous or not we have to measure the cross-gender edges and compare them to what we would expect if they were formed randomly. The problem is what do we define as “Gender” in our network. The first option would be to use actual assigned sex, so male and female, to categorize the nodes and then calculate the cross-gendered edges. Although this would be interesting, I don’t think it would add any value to my analysis and also there is really no easy way to find this.\\
 
 \subsection{Political Gender}
 My analysis of Gender will work as follows. Looking at the Description of each profile we can try to determine if the person is politically “left leaning” or not. Then we can assign 1 to “left leaning” and 0 to “not left leaning” individuals. I say leaning as you can’t be sure by using the Description of a profile. This “Gender” will help us detect if Yannis’, who is a left politician, network is mostly comprised of left-leaning accounts and weather there is an expected homophily between these categories.\\
-To determine if an account is left leaning, I looked for phrases that would indicate they are in the Description. Some examples are pronouns, “Just stop oil”, “lesbian”, “trans”, “bi”, “union”. The full list of phrases is found in the appendix. These phrases were compiled after looking through a sample of descriptions by hand and using common judgement to affiliate them with a political ideology. For example, pronouns (even though they are a part of the English language) are usually only mentioned in profile descriptions by left leaning individuals, non-straight sexual orientations or proudness is also closely affiliated with the LGBTQ community. From \autocite{hennessy2012queer} “Historically, Sex Has Been a compelling issue for the left”. Even though this method is not perfect it’s the easiest way to garner a (obviously partly flawed) sense of political affiliation for our nodes. \\
-I calculated the Assortativity Coefficient, the Homophily Index and bothe the expected and actual amount of cross gendered edges. \\
-The Assortativity Coefficient is a measure of the tendency of nodes in a network to connect to other nodes that are like themselves. It’s used to quantify whether individuals are likely to associate with others who have similar characteristics \autocite{xulvi2005changing}. The homophily index, a concept from sociology, measures the extent to which individuals are likely to form connections with others who are similar in some way (such as age, race, interests, etc.). In our analysis similarity is political affiliation. The Assortativity Coefficient is 0,0560 and indicates a very weak assortative behavior, meaning the network shows slight preference for similar connections, but it's not strong. The Homophily Index is 0,6464 which suggests moderate homophily. Keep in mind that the classes are imbalanced therefore the Assortativity Coefficient is more correct.\\
+To determine if an account is left leaning, I looked for phrases that would indicate they are in the Description. Some examples are pronouns, “Just stop oil”, “lesbian”, “trans”, “bi”, “union”. The full list of phrases is found in the appendix. These phrases were compiled after looking through a sample of descriptions by hand and using common judgement to affiliate them with a political ideology. For example, pronouns (even though they are a part of the English language) are usually only mentioned in profile descriptions by left leaning individuals, non-straight sexual orientations or proudness is also closely affiliated with the LGBTQ community. In \autocite{hennessy2012queer} it is stated that “Historically, Sex Has Been a compelling issue for the left”. Even though this method is not perfect it’s the easiest way to garner a (obviously partly flawed) sense of political affiliation for our nodes. \\
+I calculated the Assortativity Coefficient, the Homophily Index and both the expected and actual amount of cross gendered edges. \\
+The Assortativity Coefficient is a measure of the tendency of nodes in a network to connect to other nodes that are like themselves. It’s used to quantify whether individuals are likely to associate with others who have similar characteristics \autocite{xulvi2005changing}. The homophily index, a concept from sociology, measures the extent to which individuals are likely to form connections with others who are similar in some way (such as age, race, interests, etc.). In our analysis similarity is political affiliation. The Assortativity Coefficient is 0,0560 and indicates a very weak assortative behavior, meaning the network shows slight preference for similar connections, but it's not strong. The Homophily Index is 0,6464 which suggests moderate homophily. Keep in mind that the classes are imbalanced therefore the Assortativity Coefficient has more value.\\
 \begin{figure} 
 	\includegraphics[width=\linewidth]{Network Political Composition.png}
-	\caption{The networks political composition}
+	\caption{Network's Political Composition}
 	\label{fig:eigenvector}
 \end{figure}
-This is also backed up by the difference between the actual amount of cross-gender edges being 47.070 edges and the expected amount of cross-gender edges being 52.145 edges. As the expected amount is larger that the actual ammount there is slight evidence of Homophily in the network.\\
+This is also backed up by the difference between the actual amount of cross-gender edges being 47.070 edges and the expected amount of cross-gender edges being 52.145 edges. As the expected amount is larger, that the actual amount, there is slight evidence of Homophily in the network.\\
 The expected amount of homophily is given by the following equation:
 \[
 \text{Expected Amount} = 2pq \left| E \right|
 \]
-where \textit{p} is the proportion of one type of characteristic in a population (in our case left-leaning),\textit{q} is the proportion of the other type of characteristic in the population (in our case not left leaning) and $\text{} \left| E \right|$ the ammount of the nodes (in our case labled).
+where \textit{p} is the proportion of one type of characteristic in a population (in our case left-leaning), \textit{q} is the proportion of the other type of characteristic in the population (in our case not left leaning) and $\text{} \left| E \right|$ the amount of nodes (in our case labled).
 
 \section{Graph density}
-Graph density shows us how close a network is to the maximum possible amount of edges. The maximum number of edges is found using: 
+Graph density shows us how close a network is to the maximum possible number of edges. The maximum number of edges is found using: 
 \[
 {\text{max}} = \frac{n(n-1)}{2} 
 \]
-For our network that will equal 3.5 billion edges. It’s obvious that our network is sparse mirroring most social and computer networks \autocite{barabasi2013network}
+For our network that will equal 3.5 billion edges. It’s obvious that our network is sparse, mirroring most social and computer networks \autocite{barabasi2013network}
 \[
 {\text{max}} = \frac{82733 \times 82732}{2} = 3.422.333.278
 \]
 
 
 \section{Community}
-Running the Modularity Community Detection, I found a modularity of 0,736 and 26 Communities with their size distributed as in figure \ref{fig:communitiesd}. Also, the preliminary inference I made earlier seems to be correct, by far the largest Class is class number two (Colored with blue) which is the left non interconnected component of followers.\\
-As we know, a network can have high modularity (clear community structure) and low triadic closure when the communities are tightly knit but only sparsely connected to other communities, which prevents much triadic closure from happening across different subgroups. As extensively emphasized, qualitatively and now quantitatively, this is the case with our network.
+Running the, included in Gehi, Modularity Community Detection, I found a modularity of 0,736 and 26 Communities with their size distributed as in figure \ref{fig:communitiesd}. Also, the preliminary inference I made earlier seems to be correct, by far the largest Class is class number two (Colored with blue) which is the left non interconnected component of followers.\\
+As we know, a network can have high modularity (clear community structure) and low triadic closure, when the communities are tightly knit but only sparsely connected to other communities, which prevents much triadic closure from happening across different subgroups. As extensively emphasized, qualitatively and now quantitatively, this is the case with our network.
 
 \begin{figure*} % Two column figure (notice the starred environment)
 	\includegraphics[width=\linewidth]{communities-size-distribution.png}
-	\caption{The Distribution of our Communities}
+	\caption{Distribution of Communities}
 	\label{fig:communitiesd}
 \end{figure*}
 
 \subsection{Interesting Communities}
-After careful analysis of the remaining communities, as I had previously already analyzed community number two, no other interesting patterns between them became evident.
+It’s easily distinguishable that there is quite a large node area on the left of Gianis, this area seems to contain all his followers that are not connected to anyone else in the graph. This is in line with the color of the degree of these nodes signifying a degree of one (that being the connection to Gianis). Looking at these nodes there was a subset of about 6.000 of them that did not contain a Bio (Description). This caught my attention. After digging a bit further and shifting through many of them I found that they rarely contained any self-authored posts, and they were either constantly reposting other posts or their wall was completely empty. They also, after coming back to them a couple months after pulling our network, are now following a small amount of people which seem to be of common interest. I don’t want to draw any conclusion, that's left as an exercise for the reader of this coursework.
+
+After careful analysis of the remaining communities no other interesting patterns became evident. This was a surprise to me as I expected to find other interesting Groups. In the search for other communities I elected to run a different clustering algorithm. Specifically, the Leiden clustering algorithm.
+
+\subsection{Leiden Algorithm - Community Number Eight}
+The Leiden algorithm is an advanced community detection method that optimizes network modularity through a multi-phase iterative process, which significantly improves upon the Louvain algorithm. Unlike its predecessor, the Leiden algorithm introduces a refinement step that ensures greater stability and accuracy in detecting community structures, avoiding suboptimal solutions. The results of running the Algorithm can be seen in figure \ref{fig:leidend}
+
+The Leiden Algorithm uncovered a cluster of nodes, which I named " Community Number Eight", they are visible in figure \ref{fig:eight}, these nodes have many things in common. First and foremost the all follow Yanis and @ncecire.bsky.social who, we saw previously, was number one for Eigenvector Centrality. These are, also, the only two accounts in our network that they follow! That got me thinking about what they could have in common. I reran the political gender classification, and all the nodes contained one of the phrases which would classify them as “left leaning” in their description. So, a community of people unbeknownst to each other formed with their common knowledge of two very influential nodes in our network and their “left learning” descriptions. Interesting.
+
+\begin{figure*} % Two column figure (notice the starred environment)
+	\includegraphics[width=\linewidth]{Community Number 8.png}
+	\caption{Community Number Eight, colored in gold}
+	\label{fig:eight}
+\end{figure*}
+
+\begin{figure*} % Two column figure (notice the starred environment)
+	\includegraphics[width=\linewidth]{Leiden Distribution.png}
+	\caption{Leiden Community Distribution}
+	\label{fig:leidend}
+\end{figure*}
 
 \section{PageRank}
-PageRank is an algorithm designed to measure the influence ranking of nodes within a network.  It operates on the principle that a link from one node to another acts as a vote of confidence, and importantly, that votes from influential nodes carry more weight. Essentially, a node's PageRank score reflects the quantity and quality of its incoming links. The application of PageRank in our network was conducted using the included Gephi implementation. The results are found in figure \ref{fig:pagerank}. With PageRank we seem to have come full circle. Yanis is once again at the top with a score of 0.078 and is followed closely by second place @atproto.com with a score of 0.066 whom we saw dominate the closeness centrality. Well behind coming in third is @ncecire.bsky.social with a score of 0.032, remeber they were first in regards to eigenvector centrality.\\
+PageRank is an algorithm designed to measure the influence ranking of nodes within a network.  It operates on the principle that a link from one node to another acts as a vote of confidence, and importantly, that votes from influential nodes carry more weight. Essentially, a node's PageRank score reflects the quantity and quality of its incoming links. The application of PageRank in our network was conducted using the included Gephi implementation. The results are found in figure \ref{fig:pagerank}. With PageRank we seem to have come full circle. Yanis is once again at the top with a score of 0.078 and is followed closely by second place @atproto.com with a score of 0.066 whom we saw dominate the closeness centrality. Well behind coming in third is @ncecire.bsky.social with a score of 0.032, remember they were first in regards to eigenvector centrality.\\
 In conclusion, PageRank analysis confirms that Yanis is most likely the most influential node in the network.  This distinct ranking, when compared to closeness and eigenvector centralities, underscores that different centrality measures capture varied aspects of influence, providing a more comprehensive view of node importance within the network but not drawing a definitive conclusion.
 
 \begin{figure*} % Two column figure (notice the starred environment)
 	\includegraphics[width=\linewidth]{Page Rank.png}
-	\caption{The top 20 account in regards to Page Rank}
+	\caption{The Top 20 Accounts by PageRank}
 	\label{fig:pagerank}
 \end{figure*}
 
@@ -260,19 +294,17 @@ Throughout this Coursework I refer to Prof. Varoufakis by writing his first name
 
 In multiple occasions I was unable to determine if some account’s use Male or Female pronouns, to keep things easy I used the singular “they” pronoun. This is because to refer to an unknown person, in English, “they” typically occurs as an indeterminate antecedent \autocite{di1996american}. This is not meant to push any sort of “Woke” agenda as some people tend to think, but it’s just how the English language works.
 
-I pulled my nodes and edges very early in the semester when the Blusky network was still getting bigger, therefore many of my conclusions might seem out of touch with the current and more interconnected Bluesky Networks. Unfortunately, I did not have the time to re-run the analysis after the boom caused by the US election.
+I pulled my nodes and edges very early in the semester when the Blusky network was still getting bigger, therefore many of my conclusions might seem out of touch with the current and more interconnected Bluesky Networks. Unfortunately, I did not have the time to re-run the analysis after the boom caused by the US elections.
 
 It is important to note that the, automatically followed, Bluesky node (@bsky.app) was excluded from this analysis, as it artificially skewed the results and introduced distortions in the network measurements.
 
 In Greek notation, the period is used as the thousand separator while the comma serves as the decimal separator. This is the reverse of the convention commonly used in English-speaking countries. In this coursework I follow the Greek notation, the thousand separator is the period (.) and the decimal separator is the comma (,).
 
-In regards to the question about giant components in the coursework:To be honest I found it weird, as it's impossible to not have one weakly connected giant component due to the nature of the network pull (The plugin finds nodes via edges).
-
 
 %------------------------------------------------
 \section{Appendix}
 
-Keywords used to classify descriptions as left leaning are:
+Keywords used to classify descriptions as left-leaning include:
  \begin{itemize}
     \item pronouns
     \item just stop oil
@@ -291,7 +323,7 @@ Keywords used to classify descriptions as left leaning are:
     \item climate change
     \item activist
     \item feminist
-    \item equal non\_lefts
+    \item equal
     \item blm
     \item lgbt
     \item progressive
